@@ -8,7 +8,7 @@ on:
  
 jobs:
   run_commands:
-    runs-on: ubuntu-latest # Menjalankan di lingkungan Ubuntu
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -33,3 +33,4 @@ jobs:
       - name: Start the application
         run: |
           npm start
+          npm audit fix
