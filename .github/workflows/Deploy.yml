@@ -1,0 +1,33 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Update dan Upgrade APT
+        run: |
+          sudo apt update -y
+          sudo apt upgrade -y
+
+      - name: Instalasi FFmpeg dan ImageMagick
+        run: sudo apt install -y ffmpeg imagemagick
+
+      - name: Instalasi Node.js 18 dengan NVM
+        uses: nvm/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Instalasi Dependensi
+        run: npm install
+
+      - name: Jalankan Aplikasi
+        run: npm start
