@@ -20949,7 +20949,7 @@ if (!q) return replynano(`Example : ${prefix + command} ${botname}`)
 reply(mess.wait)
 let google = require('google-it')
 google({'query': text}).then(res => {
-let teks = `Google Search From : ${text}\n\n`
+let teks = `Search From : ${text}\n\n`
 for (let g of res) {
 teks += `⭔ *Title* : ${g.title}\n`
 teks += `⭔ *Description* : ${g.snippet}\n`
