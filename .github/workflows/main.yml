@@ -22,5 +22,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: nvm install 18
+    - run: nvm use 18
     - run: npm install
     - run: npm start
