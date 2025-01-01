@@ -8,7 +8,7 @@ on:
 
 jobs:
   run_commands:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [18]
