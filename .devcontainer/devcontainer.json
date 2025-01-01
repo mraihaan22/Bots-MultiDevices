@@ -1,47 +1,20 @@
-
 {
-	"name": "Debian",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
-	"remoteUser": "root",
-	"runArgs": ["--privileged"],
-	"features": {
-		"ghcr.io/customink/codespaces-features/common-amzn:1": {},
-		"ghcr.io/shyim/devcontainers-features/php:0": {
-			"installComposer": true,
-			"disableAllExtensions": true,
-			"version": "8.1"
-		},
-		"ghcr.io/wxw-matt/devcontainer-features/apt:0": {
-			"clean_cache": true,
-			"local_mirror": true
-		},
-		"ghcr.io/devcontainers-community/features/llvm:3": {},
-		"ghcr.io/devcontainers-extra/features/apt-get-packages:1": {
-			"clean_ppas": true,
-			"preserve_apt_list": true,
-			"force_ppas_on_non_ubuntu": true,
-			"packages": "build-essential",
-			"ppas": "ppa:deadsnakes/ppa"
-		},
-		"ghcr.io/devcontainers-extra/features/apt-packages:1": {
-			"clean_ppas": true,
-			"preserve_apt_list": true,
-			"force_ppas_on_non_ubuntu": true,
-			"packages": "build-essential",
-			"ppas": "ppa:deadsnakes/ppa"
-		}
-	},
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Configure tool-specific properties.
-	// "customizations": {},
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-
+    "name": "Debian",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "remoteUser": "root",
+    "runArgs": ["--privileged"],
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:1": {},
+        "ghcr.io/devcontainers-extra/features/apt-get-packages:1": {},
+		"ghcr.io/devcontainers-extra/features/apt-packages:1": {} 
+    },
+    "mounts": [
+        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+    ],
+    "extensions": [
+        "ms-azuretools.vscode-docker"
+    ],
+    "postCreateCommand": "docker --version"
 }
