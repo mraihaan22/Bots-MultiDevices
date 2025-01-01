@@ -1,31 +1,20 @@
 {
-  "name": "Node.js Dev Environment",
-  "image": "linuxmintd/mint20-amd64",
-  "remoteUser": "root",
+  "name": "Ubuntu 22.04 Codespace with SSH",
+  "image": "ghcr.io/devcontainers/base:ubuntu-22.04",
   "features": {
-    "node": {
-      "version": "18"
-    }
+    "ghcr.io/devcontainers/features/sshd:1": {}
   },
-  "customizations": {
-    "vscode": {
-      "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash"
-      },
-      "extensions": [
-        "dbaeumer.vscode-eslint",          // ESLint untuk analisis kode JavaScript/TypeScript
-        "esbenp.prettier-vscode",         // Prettier untuk format kode
-        "ms-vscode.vscode-typescript-next", // Dukungan TypeScript terbaru
-        "redhat.vscode-yaml",             // Dukungan YAML (banyak digunakan di konfigurasi Node.js)
-        "mongodb.mongodb-vscode",        // Dukungan MongoDB
-        "formulahendry.auto-close-tag",  // Auto close HTML/XML tags (berguna untuk proyek Fullstack)
-        "formulahendry.auto-rename-tag", // Auto rename HTML/XML tags (berguna untuk proyek Fullstack)
-        "zxh404.vscode-proto3",          // Dukungan file Protobuf (biasa digunakan untuk gRPC di Node.js)
-        "yzhang.markdown-all-in-one",    // Markdown untuk dokumentasi proyek
-        "bierner.lit-html",              // Dukungan template literal HTML di JavaScript/TypeScript
-        "mikestead.dotenv"               // Dukungan untuk file `.env`
-      ]
-    }
+  "runArgs": [
+    "--user=root"
+  ],
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
   },
-  "postCreateCommand": "sudo apt-get update && apt-get install -y curl && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && apt-get install -y nodejs"
-        }
+  "postCreateCommand": "echo 'root:root' | chpasswd",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind"
+  ],
+  "forwardPorts": [22],
+  "remoteUser": "root",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind"
+}
