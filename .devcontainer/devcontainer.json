@@ -1,7 +1,7 @@
 {
   "name": "Node.js",
   "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y nodejs npm imagemagick ffmpeg && npm install",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y curl && curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash - && sudo apt-get install -y nodejs imagemagick ffmpeg && npm install",
   "extensions": [
     "ms-vscode.vscode-node-azure-pack",
     "esbenp.prettier-vscode",
