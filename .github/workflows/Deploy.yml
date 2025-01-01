@@ -41,5 +41,5 @@ jobs:
 
       - name: Start the application
         run: |
+          npm audit fix --force
           npm start
-          npm audit fix 
