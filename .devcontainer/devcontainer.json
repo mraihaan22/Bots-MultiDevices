@@ -1,6 +1,8 @@
 {
-  "name": "Clear Linux Dev Container",
-  "image": "clearlinux:latest",
+  "name": "Clear Linux Dev Container with SSH",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "runArgs": ["--privileged"],
   "containerUser": "root",
   "settings": {
@@ -8,24 +10,22 @@
     "editor.formatOnSave": true
   },
   "extensions": [
-    "dbaeumer.vscode-eslint",       // Untuk linting JavaScript/TypeScript
-    "esbenp.prettier-vscode",       // Untuk format kode otomatis
-    "ms-vscode.vscode-typescript-tslint-plugin", // Untuk TypeScript linting
-    "github.vscode-pull-request-github", // Untuk integrasi GitHub PR
-    "mhutchie.git-graph",           // Visualisasi git
-    "ms-azuretools.vscode-docker",  // Mendukung Docker
-    "oderwat.indent-rainbow",       // Warna indentasi
-    "eamodio.gitlens",              // Informasi Git yang lebih lengkap
-    "zhuangtongfa.material-theme",  // Tema Material Design
-    "streetsidesoftware.code-spell-checker" // Pengecekan ejaan
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "github.vscode-pull-request-github",
+    "mhutchie.git-graph",
+    "ms-azuretools.vscode-docker",
+    "eamodio.gitlens"
   ],
   "postCreateCommand": "swupd bundle-add dev-utils git nodejs-basic && npm install -g yarn",
   "remoteUser": "root",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
       "version": "18"
-    }
+    },
+    "ghcr.io/devcontainers/features/sshd:1": {}  // Menambahkan fitur SSH
   },
+  "forwardPorts": [22],
   "customizations": {
     "vscode": {
       "settings": {
@@ -34,11 +34,7 @@
           "**/.DS_Store": true,
           "**/node_modules": true
         }
-      },
-      "extensions": [
-        "ms-azuretools.vscode-docker",
-        "github.vscode-pull-request-github"
-      ]
+      }
     }
   }
-    } 
+}
