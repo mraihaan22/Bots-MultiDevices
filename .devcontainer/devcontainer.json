@@ -1,0 +1,21 @@
+{
+    "name": "Debian",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "remoteUser": "root",
+    "runArgs": ["--privileged"],
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:1": {},
+        "ghcr.io/devcontainers-extra/features/apt-get-packages:1": {},
+	"ghcr.io/devcontainers-extra/features/apt-packages:1": {},
+	"ghcr.io/devcontainers/features/sshd:1": {}
+    },
+    "mounts": [
+        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+    ],
+    "extensions": [
+        "ms-azuretools.vscode-docker"
+    ],
+    "postCreateCommand": "docker --version"
+}
