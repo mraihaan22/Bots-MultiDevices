@@ -1,0 +1,26 @@
+{
+  "name": "Node.js",
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y nodejs npm imagemagick ffmpeg && npm install",
+  "extensions": [
+    "ms-vscode.vscode-node-azure-pack",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "redhat.vscode-yaml",
+    "mhutchie.git-graph",
+    "ms-azuretools.vscode-docker",
+    "christian-kohler.npm-intellisense"
+  ],
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "editor.formatOnSave": true,
+    "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"]
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    }
+  },
+  "remoteUser": "root",
+  "postStartCommand": "echo 'root user has access!'"
+}
