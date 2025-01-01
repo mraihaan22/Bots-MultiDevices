@@ -1,20 +1,26 @@
 {
-  "name": "Ubuntu 22.04 Codespace with SSH",
-  "image": "ghcr.io/devcontainers/base:ubuntu-22.04",
-  "features": {
-    "ghcr.io/devcontainers/features/sshd:1": {}
-  },
-  "runArgs": [
-    "--user=root"
-  ],
+  "name": "Alpine Linux Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/base:alpine-3.16",
   "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
+    "terminal.integrated.shell.linux": "/bin/ash"
   },
-  "postCreateCommand": "echo 'root:root' | chpasswd",
-  "mounts": [
-    "source=${localWorkspaceFolder},target=/workspace,type=bind"
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/gh-cli:1": {}
+  },
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-typescript-next",
+    "streetsidesoftware.code-spell-checker"
   ],
-  "forwardPorts": [22],
+  "forwardPorts": [3000],
+  "postCreateCommand": "npm install",
   "remoteUser": "root",
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind"
+  "mounts": [
+    "source=/path/to/local/folder,target=/workspace,type=bind"
+  ]
 }
