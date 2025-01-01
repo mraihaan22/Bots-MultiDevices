@@ -1,26 +1,44 @@
 {
-  "name": "Node.js",
-  "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y curl && curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash - && sudo apt-get install -y nodejs imagemagick ffmpeg && npm install",
-  "extensions": [
-    "ms-vscode.vscode-node-azure-pack",
-    "esbenp.prettier-vscode",
-    "dbaeumer.vscode-eslint",
-    "redhat.vscode-yaml",
-    "mhutchie.git-graph",
-    "ms-azuretools.vscode-docker",
-    "christian-kohler.npm-intellisense"
-  ],
+  "name": "Clear Linux Dev Container",
+  "image": "clearlinux:latest",
+  "runArgs": ["--privileged"],
+  "containerUser": "root",
   "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash",
-    "editor.formatOnSave": true,
-    "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"]
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "editor.formatOnSave": true
   },
+  "extensions": [
+    "dbaeumer.vscode-eslint",       // Untuk linting JavaScript/TypeScript
+    "esbenp.prettier-vscode",       // Untuk format kode otomatis
+    "ms-vscode.vscode-typescript-tslint-plugin", // Untuk TypeScript linting
+    "github.vscode-pull-request-github", // Untuk integrasi GitHub PR
+    "mhutchie.git-graph",           // Visualisasi git
+    "ms-azuretools.vscode-docker",  // Mendukung Docker
+    "oderwat.indent-rainbow",       // Warna indentasi
+    "eamodio.gitlens",              // Informasi Git yang lebih lengkap
+    "zhuangtongfa.material-theme",  // Tema Material Design
+    "streetsidesoftware.code-spell-checker" // Pengecekan ejaan
+  ],
+  "postCreateCommand": "swupd bundle-add dev-utils git nodejs-basic && npm install -g yarn",
+  "remoteUser": "root",
   "features": {
-    "ghcr.io/devcontainers/features/sshd:1": {
-      "version": "latest"
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
     }
   },
-  "remoteUser": "root",
-  "postStartCommand": "echo 'root user has access!'"
-}
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "files.exclude": {
+          "**/.git": true,
+          "**/.DS_Store": true,
+          "**/node_modules": true
+        }
+      },
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "github.vscode-pull-request-github"
+      ]
+    }
+  }
+    } 
