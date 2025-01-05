@@ -5,7 +5,6 @@ const { baileys, boom, chalk, fs, figlet, FileType, path, pino, process, PhoneNu
 const { Boom } = boom
 const {
 	default: XeonBotIncConnect,
-	Browsers,
 	BufferJSON,
 	processedMessages,
 	PHONENUMBER_MCC,

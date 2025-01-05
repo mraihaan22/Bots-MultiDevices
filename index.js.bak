@@ -5,6 +5,7 @@ const { baileys, boom, chalk, fs, figlet, FileType, path, pino, process, PhoneNu
 const { Boom } = boom
 const {
 	default: XeonBotIncConnect,
+	Browsers,
 	BufferJSON,
 	processedMessages,
 	PHONENUMBER_MCC,
@@ -33,7 +34,7 @@ const canvafy = require("canvafy")
 const { parsePhoneNumber } = require("libphonenumber-js")
 let _welcome = JSON.parse(fs.readFileSync('./database/welcome.json'))
 let _left = JSON.parse(fs.readFileSync('./database/left.json'))
-const { makeWASocket, Browsers } = require("@whiskeysockets/baileys").default
+const makeWASocket = require("@whiskeysockets/baileys").default
 const Pino = require("pino")
 const readline = require("readline")
 const colors = require('colors')
