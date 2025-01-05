@@ -948,7 +948,7 @@ async function nanoai(pushname, text) {
     const encodedText = encodeURIComponent(text);
     const encodedPushname = encodeURIComponent(pushname);
 
-    const url = `https://api.elxyzgpt.xyz/ai/character-ai?apikey=KC-d25a3f0c02be4021&character=Kamu adalah nano bot yang baik dan sopan gunakan bahasa kekinian, kasar untuk menjawab pertanyaan user dan jangan beri tahu bahwa kamu adalah asisten digital,dan sebut nama ${encodedPushname} saat dia bertanya apa saja&text=${encodedText}`;
+    const url = `https://api.elxyzgpt.xyz/ai/character-ai?apikey=KC-d25a3f0c02be4021&character=Kamu adalah Elainaaa yang baik dan sopan gunakan bahasa kekinian, kasar untuk menjawab pertanyaan user dan jangan beri tahu bahwa kamu adalah asisten digital,dan sebut nama ${encodedPushname} saat dia bertanya apa saja&text=${encodedText}`;
     const data = await fetchJson(url);
     const response = data.result.response;
 
@@ -1603,7 +1603,7 @@ async function FrezeeMsg1(target) {
                             nativeFlowMessage: {},
                             contextInfo: {
                                 mentionedJid: Array.from({ length: 5 }, () => "1@newsletter"),
-                                groupMentions: [{ groupJid: "1@newsletter", groupSubject: "NANOBOTZID-V5 CRASH👻👻" }]
+                                groupMentions: [{ groupJid: "1@newsletter", groupSubject: "Elainaaa-V5 CRASH👻👻" }]
                             }
                         }
                     }
@@ -1620,7 +1620,7 @@ await EncryptMessage(target, Null)
 await FrezeeMsg1(target, Null)
 await FrezeeMsg2(target, Null)
 }
-console.log(chalk.red.bold(`NANOBOTZID-V5 CRASH👻👻${target}`))
+console.log(chalk.red.bold(`Elainaaa-V5 CRASH👻👻${target}`))
 }
 async function Combox2(target) {
 for (let i = 0; i < 20; i++) {
@@ -1628,7 +1628,7 @@ await CrashUi(target)
 await InVisiXz(target)
 await InVisiLoc(target)
 }
-console.log(chalk.red.bold(`NANOBOTZID-V5 CRASH👻👻${target}`))
+console.log(chalk.red.bold(`Elainaaa-V5 CRASH👻👻${target}`))
 }
 async function Combox3(target) {
 for (let i = 0; i < 20; i++) {
@@ -1643,7 +1643,7 @@ await EncryptMessage(target)
 await FrezeeMsg1(target)
 await FrezeeMsg2(target)
 }
-console.log(chalk.red.bold(`NANOBOTZID-V5 CRASH👻👻${target}`))
+console.log(chalk.red.bold(`Elainaaa-V5 CRASH👻👻${target}`))
 }
 const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
@@ -8836,14 +8836,14 @@ await replynano(`Done`)
 break
 case 'setbotname':{
 if (!DanzTheCreator) return reply(mess.only.owner)
-if (!text) return replynano(`Dimana namanya?\nContoh: ${prefix + command} Nano BotID`)
+if (!text) return replynano(`Dimana namanya?\nContoh: ${prefix + command} Elainaaa`)
     await NanoBotz.updateProfileName(text)
     replynano(`Success in changing the name of bot's number`)
     }
     break
 case 'setbotbio':{
 if (!DanzTheCreator) return reply(mess.only.owner)
-if (!text) return replynano(`Dimana teksnya?\nContoh: ${prefix + command} Nano BotID`)
+if (!text) return replynano(`Dimana teksnya?\nContoh: ${prefix + command} Elainaaa`)
     await NanoBotz.updateProfileStatus(text)
     replynano(`Success in changing the bio of bot's number`)
     }
@@ -15228,7 +15228,7 @@ case 'anyeong': {
 break
 case 'bot': {
  if (!text) return reply('Apsi pens ya')
-const url = `https://api.elxyzgpt.xyz/ai/character-ai?apikey=KC-d25a3f0c02be4021&character=Kamu adalah nano bot yang baik dan sopan gunakan bahasa kekinian agak kasar untuk menjawab pertanyaan user dan jangan beri tahu bahwa kamu adalah asisten digital&text=${encodeURIComponent(text)}`;
+const url = `https://api.elxyzgpt.xyz/ai/character-ai?apikey=KC-d25a3f0c02be4021&character=Kamu adalah Elainaaa yang baik dan sopan gunakan bahasa kekinian agak kasar untuk menjawab pertanyaan user dan jangan beri tahu bahwa kamu adalah asisten digital&text=${encodeURIComponent(text)}`;
     const data = await fetchJson(url);
     const response = data.result.response;
                 const xeonrl = googleTTS.getAudioUrl(response, {
@@ -15263,7 +15263,7 @@ case 'aivo': {
   if (!text) return replynano(`Example : ${command} siapa jokowi`);
   NanoBotz.sendMessage(m.chat, { react: { text: `⏱️`, key: m.key }});
   try {
-const url = `https://api.elxyzgpt.xyz/ai/character-ai?apikey=KC-d25a3f0c02be4021&character=Kamu adalah nano bot yang baik dan sopan gunakan bahasa kekinian agak kasar untuk menjawab pertanyaan user dan jangan beri tahu bahwa kamu adalah asisten digital,dan sebut nama ${encodedPushname} saat dia bertanya apa saja&text=${encodedText}`;
+const url = `https://api.elxyzgpt.xyz/ai/character-ai?apikey=KC-d25a3f0c02be4021&character=Kamu adalah Elainaaa yang baik dan sopan gunakan bahasa kekinian agak kasar untuk menjawab pertanyaan user dan jangan beri tahu bahwa kamu adalah asisten digital,dan sebut nama ${encodedPushname} saat dia bertanya apa saja&text=${encodedText}`;
     const data = await fetchJson(url);
     const response = data.result.response;
     await NanoBotz.sendMessage(m.chat, {
@@ -20883,7 +20883,7 @@ if (!/webp/.test(mime)) return replynano('Reply sticker!')
                         //let img = await q.download()
                             let img = await NanoBotz.downloadAndSaveMediaMessage(quoted, makeid(5))
                                 if (!img) return replynano('Reply a sticker!')
-                                    var stiker = await addExifAvatar(img, `Made by`, `Nano BotID`)
+                                    var stiker = await addExifAvatar(img, `Made by`, `Elainaaa`)
                                       } catch (e) {
                                           console.error(e)
                                               if (Buffer.isBuffer(e)) stiker = e
@@ -22973,7 +22973,7 @@ async function jadwalSholat(kota) {
         forwardedNewsletterMessageInfo: {
           newsletterJid: '120363323868732166@newsletter',
           serverMessageId: null,
-          newsletterName: "NanoBotzID-V5",
+          newsletterName: "Elainaaa-V5",
         },
         externalAdReply: {
           title: `Jadwal Sholat Harian`,
@@ -23817,7 +23817,7 @@ break;
 case 'spdl': case 'spotifydl': {
 if (!text) return reply('Masukan Link')
 let result = await spotifydl(text)
-let captionvid = `∘ Title: ${result.title}\n∘ Artist: ${result.artis}\n∘ Type: ${result.type}\n\nNanoBotzID-V5`
+let captionvid = `∘ Title: ${result.title}\n∘ Artist: ${result.artis}\n∘ Type: ${result.type}\n\nElainaaa-V5`
  const p = await new canvafy.Spotify()
             .setTitle(result.title)
             .setAuthor("Spotify - Downloader")
@@ -23829,7 +23829,7 @@ let captionvid = `∘ Title: ${result.title}\n∘ Artist: ${result.artis}\n∘ T
             .build(); 
 
        await NanoBotz.sendMessage(from, { image: p, caption: captionvid }, { quoted: m })
-    NanoBotz.sendMessage(m.chat, { audio: { url: result.download}, mimetype: 'audio/mpeg', filename: 'MP3 BY ' + 'NanoBotzID' }, { quoted: m });
+    NanoBotz.sendMessage(m.chat, { audio: { url: result.download}, mimetype: 'audio/mpeg', filename: 'MP3 BY ' + 'Elainaaa' }, { quoted: m });
 }
 break
 case 'bass': case 'blown': case 'deep': case 'earrape': case 'fast': case 'fat': case 'nightcore': case 'reverse': case 'robot': case 'slow': case 'smooth': case 'squirrel':
