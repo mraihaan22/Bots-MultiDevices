@@ -33,7 +33,7 @@ const canvafy = require("canvafy")
 const { parsePhoneNumber } = require("libphonenumber-js")
 let _welcome = JSON.parse(fs.readFileSync('./database/welcome.json'))
 let _left = JSON.parse(fs.readFileSync('./database/left.json'))
-const makeWASocket = require("@whiskeysockets/baileys").default
+const { makeWASocket, Browsers } = require("@whiskeysockets/baileys").default
 const Pino = require("pino")
 const readline = require("readline")
 const colors = require('colors')
@@ -81,7 +81,7 @@ async function NanoBotzInd() {
          creds: state.creds,
          keys: makeCacheableSignalKeyStore(state.keys, Pino({ level: "fatal" }).child({ level: "fatal" })),
       },
-      browser: Browsers.windows('Firefox'), // for this issues https://github.com/WhiskeySockets/Baileys/issues/328
+      browser: [ 'Mac OS', 'chrome', '121.0.6167.159' ], // for this issues https://github.com/WhiskeySockets/Baileys/issues/328
       patchMessageBeforeSending: (message) => {
             const requiresPatch = !!(
                 message.buttonsMessage ||
