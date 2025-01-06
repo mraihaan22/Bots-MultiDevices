@@ -5,6 +5,7 @@ const { baileys, boom, chalk, fs, figlet, FileType, path, pino, process, PhoneNu
 const { Boom } = boom
 const {
 	default: XeonBotIncConnect,
+	Browsers,
 	BufferJSON,
 	processedMessages,
 	PHONENUMBER_MCC,
@@ -81,7 +82,7 @@ async function NanoBotzInd() {
          creds: state.creds,
          keys: makeCacheableSignalKeyStore(state.keys, Pino({ level: "fatal" }).child({ level: "fatal" })),
       },
-      browser: [ 'Mac OS', 'chrome', '121.0.6167.159' ], // for this issues https://github.com/WhiskeySockets/Baileys/issues/328
+      browser: Browsers.windows('Firefox'),  // for this issues https://github.com/WhiskeySockets/Baileys/issues/328
       patchMessageBeforeSending: (message) => {
             const requiresPatch = !!(
                 message.buttonsMessage ||
